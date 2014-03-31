@@ -1,0 +1,516 @@
+/* Couleurs
+ * 
+ * sable : #e1d8b7
+ * bleu :#193742 */
+
+/* Table des matieres */
+
+/*  ^1 Styles globaux
+	^2 classes globales
+	^3 Mise en page 
+*/	
+
+html, body, h1, h2, p, ul, li {
+	margin: 0;
+	padding: 0;
+}
+/* ^1 Styles globaux */
+body{
+	font-family: Georgia,'Book Antiqua', serif;
+	font-size: 100%; /* par rapport a la taille de police du navigateur */
+	background-color: #e1d8b7;
+	background-image: url('../_images/page_background.jpg');
+	background-repeat:repeat-x; 
+	margin-top: 25px;
+}
+
+h1 {
+	color: #193742;
+	font-size: 2em ;/* 200% */;
+	margin-bottom: .4em;
+}
+
+h2 {
+	color: #51341a;
+	font-size: 1.6em;
+	font-weight: normal;
+	letter-spacing: .05em;
+	margin-bottom: 1em;
+	margin-top: 1.2em;
+}
+
+p {
+	color: #333;
+	font-size: 90%;
+	font-family: 'Century Gothic', sans-serif;
+	line-height: 1.8;
+	margin-bottom: 1em;
+}
+
+code {
+	font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+address {
+	letter-spacing: .1em;
+}
+
+blockquote {
+	border-left: 4px solid #000;
+	padding-left : 40px;
+	background-color: #FFF;
+}
+
+h3 {
+	font-size: 1.3em;
+	color: #51341a;
+	font-weight: normal;
+	margin: 1.25em 0 .5em;
+}
+
+a:link, a:visited {
+	color: #995522;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #cb7d20;
+	border-bottom: 1px dashed #cb7d20;
+}
+
+a.accent {
+	display: block;
+	/* text-align: right; */
+}
+a.accent:hover , a.accent:active{
+	border :0;
+	color:#CB7D20;
+}
+/* ^2 Classes globales */
+
+.imageDroite {
+	float: right;
+	margin: 20px 0 20px 20px;
+}
+
+
+.randoDescription {
+	border-top: 2px solid #2c566a;
+	padding: 10px 0;
+	margin-bottom: 15px;
+	clear: both;
+}
+
+.randoDescription h2 {
+	font-size: 1.6em;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color: #193742;
+	font-weight: bold;
+	margin-bottom: 0;
+	/* clear: right; */
+}
+
+.randoDescription p {
+	font-size: .9em;
+	line-height: 1.5;
+}
+
+.randoDescription img {
+	float: left;
+	padding: 10px 10px 10px 0;
+}
+
+.randoDescription a.accent {
+	
+	width: 95px;
+	height: 30px;
+	float: right;
+	background-image: url('../_images/more_bug.gif');
+	background-repeat: no-repeat;
+	background-position: left top;/* diviser l'image originale , partie gauche' */
+	text-indent: -9999px;
+}
+
+.randoDescription a.accent:hover {
+	
+	background-position: right top; /* diviser l'image originale, partie droite' */
+	
+}
+
+/* ^ 3 Mise en page */
+#container {
+	width: 930px;
+	background-color: #FFF;
+	margin: 0 auto;
+	position: relative; /* definir une refernce pour les positions des autres*/
+}
+#header{
+	width: 192px;
+	height: 237px;
+	/* background-color: pink; */
+	background: url('../_images/logo.gif') no-repeat; 
+	position: absolute;
+	left: 35px;
+	top:-25px;
+}
+#header a{
+	display: block;
+	width: 192px;
+	height: 237px;
+	text-indent: -9999px;
+	
+	
+}
+#header a:active ,#header a:hover, #header a:focus{
+	border: none;
+}
+#nav{
+	width: 272px;
+	/* height: 400px; */
+	/* background-color: blue; */
+	float: left;
+	margin-top: 232px;
+	
+}
+
+#mainContent {
+	width: 608px;
+	/* background-color: gray; */
+	float:right;
+	overflow: auto; /* ma derniere image ne deborde plus */
+	padding-right: 25px;
+	
+}
+#sideContent{
+	clear: left;/*ds le cas ou on'a pas asser de content, notre sideContent semet au milieu juste apes le maniContaint*/
+	width: 272px;
+	height: 400px;
+	/* background-color: green; */
+	float:left;
+}
+#footer{
+	width:870px;
+	height: 525px;
+	background: url('../_images/footer_back.gif') no-repeat;
+	clear:both;
+	margin-top: 45px;
+	padding: 45px 30px 30px;
+}
+
+/* ^4 menu */
+#home #nav ul {
+	list-style: none;
+	margin-bottom: 50px;
+}
+
+#home #nav  li {
+	text-indent: -9999px;
+}
+
+#home #nav  a {
+	display: block;
+	width: 272px;
+	height: 82px;
+}
+
+#home #nav  a.randonnees {
+	background: url('../_images/tours_nav.gif') no-repeat left top;
+}
+#home #nav  a.mission {
+	background: url('../_images/mission_nav.gif') no-repeat left top;
+}
+#home #nav  a.contact {
+	background: url('../_images/contact_nav.gif') no-repeat left top;
+}
+#home #nav  a.ressources {
+	background: url('../_images/resources_nav.gif') no-repeat left top;
+}
+#home #nav  a.explorateurs {
+	background: url('../_images/explorers_nav.gif') no-repeat left top;
+}
+
+#home #nav  a:hover,
+#home #nav  a:active {
+	border: none;
+	background-position: -272px 0;
+}
+
+/* menu des autres pages */
+#not-home #nav ul {
+	float: left;
+	list-style: none;
+	margin:0;
+	padding:0;
+	margin-bottom: 50px;
+	clear: left;
+}
+#not-home #nav ul li {
+	margin: 0;
+	padding: 0;
+}
+#not-home #nav ul li a {
+	display: block;
+	width: 272px;
+	height: 60px;
+	text-indent: -1000em;
+}
+#not-home #nav ul li a.randonnees {
+	background: url('../_images/tours_main.gif') no-repeat left top;
+}
+#not-home #nav ul li a.mission {
+	background: url('../_images/mission_main.gif') no-repeat left top;
+}
+#not-home #nav ul li a.contact {
+	background: url('../_images/contact_main.gif') no-repeat left top;
+}
+#not-home #nav ul li a.ressources {
+	background: url('../_images/resource_main.gif') no-repeat left top;
+}
+#not-home #nav ul li a.explorateurs {
+	background: url('../_images/explorers_main.gif') no-repeat left top;
+}
+#not-home #nav ul li a.current, #not-home #nav ul li a.current:hover {
+	background-position: right top;
+	border: none;
+	cursor: default;
+}
+
+#not-home #nav ul li a:hover {
+	background-position: -272px 0;
+	border: none;
+}
+
+
+#tabRandos {
+	width: 90%;
+	margin: 0 auto 30px;
+	font-family: 'Century Gothic', sans-serif;
+	font-size: .9em;
+	border: 1px solid #333;
+	border-collapse: collapse;
+	background-color: #E1D8B9;
+}
+
+#tabRandos caption {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #51341A;
+	padding-bottom: 10px;
+	margin:0;
+	text-align: left;
+}
+
+#tabRandos #nomRando {
+	width: 25%;
+}
+
+#tabRandos th {
+	font-size: 1em;
+	font-weight: normal;
+	color: #FFF;
+	padding: 0 10px;
+	border-bottom: 1px solid #000;
+	text-align: left;
+	line-height: 2.6em;
+	background-color: #555;
+}
+
+#tabRandos thead {
+	background: url('../_images/thead_back.gif') repeat-x left top;
+}
+
+#tabRandos thead th {
+	background-color: transparent;
+	border-bottom: 1px solid #333;
+}
+
+#tabRandos td {
+	padding: 0 10px;
+	border: 1px solid #333;
+	font-size: .8em;
+	/* vertical-align: top; */
+}
+
+/* #tabRandos tbody tr:nth-child(2n) { CSS3
+	background-color: #ddd;
+} */
+
+#tabRandos tbody tr.alt {
+	background-color: #ddd;
+}
+
+#tabRandos tbody tr:hover * {
+	background-color: #fff;
+}
+
+#tabRandos tbody tr:hover th {
+	color: #000;
+}
+
+#tabRandos tfoot {
+	line-height: 2.6em;
+}
+
+
+
+
+
+
+
+h1#pageId {
+	color: #193742;
+	font-size: 1.4em;
+	margin-top: 20px;
+	padding-bottom: .25em;
+	border-bottom: 2px solid #193742;
+}
+
+p#filAriane a {
+	color: #CB202A;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	font-size: 1em;
+}
+p#filAriane a:hover {
+	color: #3c6b92;
+	border: none;
+}
+
+/* Footer */
+
+#footer address {
+	color: #fff;
+	text-align: right;
+	float: right;
+	letter-spacing: .1em;
+}
+
+#footer address > span:first-child {
+	/* font-variant: small-caps; */
+	font-style: normal;
+	font-size: 120%;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* ^6 Styles de home */
+
+#home #container {
+	background: #193742 url('../_images/main_back.jpg') no-repeat;
+}
+
+#home #filAriane {
+	position: absolute;
+	top: 40px;
+	right: -15px;
+	width: 300px;
+	height: 80px;
+	background: url('../_images/tag.png') no-repeat;
+	text-indent: -9999px;
+}
+
+#home #filAriane a {
+	display: block;
+	width: 300px;
+	height: 80px;
+}
+
+#home #filAriane a:hover, #home #filAriane a:active {
+	border: none;
+}
+
+#home #filAriane a:focus {
+	outline: none;
+}
+
+
+#home #mainContent {
+	margin-top: 234px;
+}
+	#home #mainContent h1 {
+		font-style: normal;
+		font-size: 2.5em;
+		font-family: 'Georgia', 'Times New Roman', serif;
+		margin: .5em 0 .25em;
+		color: #000;
+		letter-spacing: -1px;
+	}
+
+
+
+
+
+ul.faqNav {
+	list-style: none;
+	margin: 0 0 1em 0;
+	width: 180px;
+	/* float: left; */
+	display: inline-block;
+	margin-right: 15px;
+}
+
+ul.faqNav li {
+	background: #ccc !important;
+	border: 1px solid #999;
+	margin: 0 0 10px 0;
+	font-size: .85em;
+}
+
+ul.faqNav li a:link,
+ul.faqNav li a:visited {
+	color: #193742;
+	display: block;
+	padding: .3em 10px .3em 20px;
+	margin-left: 10px;
+	width: 140px;
+	background: url('../_images/subNav_accent.gif') no-repeat left -17px;
+}
+
+ul.faqNav li a:hover,
+ul.faqNav li a:active {
+	color: #CB7D20;
+	border: none;
+	background-position: left 3px;
+}
+
+	dl dt {
+		font: normal bold .9em Tahoma, Geneva, sans-serif;
+		padding: 0;
+		margin: 1em 0 .5em;
+		color: #333;
+		letter-spacing: 1px;
+	}
+
+	dl dd {
+		font-size: .9em;
+		line-height: 1.4;
+		color: #333;
+		text-align: justify;
+		margin: 0;
+		padding: 0 0 0 2em;
+	}
+
+	p a.top {
+		text-align: right;
+		padding-left: 30px;
+		float: right;
+		line-height: 20px;
+		background: url('../_images/return_top.gif') no-repeat;
+	}
+
+	p a.top:hover {
+		border: none;
+		color: #333;
+	}
+
+	h3:target {
+		font-weight: bold;
+		font-size: 200%;
+	}
+
+	h3:target > span {
+		display: inline-block;
+		width: 15px;
+		height: 20px;
+		background: url('../_images/subNav_accent.gif') no-repeat left -38px;
+		margin-right: 6px;
+	}
+
