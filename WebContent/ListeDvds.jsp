@@ -8,34 +8,53 @@
 <head>
 <meta charset="UTF-8" />
 <title>Liste dvds</title>
-<c:url var="jQuery" value="/_js/libs/jquery-1.10.2.min.js" />
-<c:url var="js" value="/_js/valider.js" />
-<c:url var="normalize" value="/_css/normalize.css" />
-<c:url var="style" value="/_css/styles.css" />
-<c:url var="urlAdd" value="/dvd/add" />
-<link rel="stylesheet" href="${normalize}" type="text/css"
-	media="screen" />
-<link rel="stylesheet" href="${style}" type="text/css" media="screen" />
+	<c:url var = "jQuery"    value="/_js/libs/jquery-1.10.2.min.js"/>
+	<c:url var = "bootstjs"    value="/_js/bootstrap.min.js"/>
+	
+	<c:url var = "normalize" value="/_css/normalize.css"/>
+	<c:url var = "boots"     value="/_css/bootstrap.min.css"/>
+	<c:url var = "bord"     value="/_css/dashboard.css"/>
+	<c:url var = "starter"     value="/_css/starter-template.css"/>
+
+
+	<c:url var="urlAdd" value="/dvd/add" />
+	<link rel="stylesheet" href="${bord}" >
+	<link rel="stylesheet" href="${normalize}"  />
+	<link rel="stylesheet" href="${boots}" />
+	<link href="${starter}" rel="stylesheet">
+	
 </head>
 <body>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">DvdTheque</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+     <div class="container">
 	<p id="succes">Il y a actuellement  :${nbvisiteurs} utilisateur(s) connecté(s)</p>
 	<p id="succes">${succes}</p>
-	<p>Liste des DVDs</p>
-	<table id="tabRandos" summary="Liste des DVDs...">
-		<caption>Liste des DVDs</caption>
-		<!-- legende de tableau -->
-		<colgroup>
-			<col id="nomRando" />
-			<!-- pour le style -->
-			<col id="typeRando" />
-			<col id="longueurRando" />
-			<col id="traceRando" />
-			<col id="deniveleRando" />
-
-		</colgroup>
-		<thead>
-			<tr>
-				<th scope="col">Titre</th>
+	<h2 class="sub-header">Liste des DVDs</h2>
+	
+	<div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Titre</th>
 				<!-- scope = col, entete d'une colone -->
 				<th scope="col">ISBN</th>
 				<th scope="col">Date de sortie</th>
@@ -43,16 +62,10 @@
 				<th scope="col">Acteurs</th>
 				<th scope="col">Durée</th>
 				<th scope="col">Genre</th>
-			</tr>
-		</thead>
-		<tfoot>
-			<tr>
-				<td colspan="7">Un blabla dans le &lt;tfoot&gt; qui s'étend sur
-					plusieurs colonnes.</td>
-			</tr>
-		</tfoot>
-		<tbody>
-			<c:forEach var="dvd" items="${dvdsList}">
+                </tr>
+              </thead>
+              <tbody>
+               <c:forEach var="dvd" items="${dvdsList}">
 			<tr>
 				<th scope="row">${dvd.titre}</th>
 				<td>${dvd.ISBN}</td>
@@ -63,16 +76,17 @@
 				<td>${dvd.categorie.getCatType()}</td>
 			<tr>
 			</c:forEach>
-		</tbody>
-
-	</table>
-	
+                  
+              </tbody>
+            </table>
+   </div>
 	
 
 	<p>
 		<a target="" href="${urlAdd}">Retour au formulaire</a>
 	</p>
+	 </div><!-- /.container -->
 </body>
-<script src="${jQuery}" type="text/javascript" charset="utf-8"></script>
-<script src="${js}" type="text/javascript" charset="utf-8"></script>
+<script src="${jQuery}"></script>
+    <script src="${bootstjs}"></script>
 </html>
